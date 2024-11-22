@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Keypad : Interactible
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    private GameObject door;
+    private bool doorOpen;
     void Start()
     {
         
@@ -15,6 +17,7 @@ public class Keypad : Interactible
     }
     protected override void Interact()
     {
-      Debug.Log("Interacting with "+gameObject.name);
+      doorOpen=!doorOpen;
+      door.GetComponent<Animator>().SetBool("IsOpen", doorOpen);
     }
 }

@@ -27,11 +27,12 @@ public class PlayerInteract : MonoBehaviour
         {
             if (hitInfo.collider.GetComponent<Interactible>()!=null)
             {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactible>().prompMessage);
-               //if (inputManager.onFoot.Interact.Triggered)
-               // {
-               //     hitInfo.collider.GetComponent<Interactible>().Interact();
-               // }
+                Interactible interactible = hitInfo.collider.GetComponent<Interactible>();
+                playerUI.UpdateText(interactible.prompMessage);
+               if (inputManager.onFoot.Interact.triggered)
+                {
+                    interactible.BaseInteract();
+                }
             }
         }
     }
