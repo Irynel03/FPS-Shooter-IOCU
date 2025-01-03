@@ -23,12 +23,10 @@ public class ShootHandler : MonoBehaviour
     {
         foreach (add_shoot s in added_shoots)
         {
-
             shoot(s.pos, s.rot, s.dmg);
         }
 
         added_shoots.Clear();
-
     }
 
     public void register_shoot(Vector3 pos, Vector3 rot, int dmg)
@@ -45,12 +43,15 @@ public class ShootHandler : MonoBehaviour
         {
             if (hit.collider.tag == "body")
             {
-                hit.collider.gameObject.GetComponent<bunny_receive_dmg>().take_dmg(dmg);
+                Debug.Log("Shoot called with pos: " + pos + ", rot: " + rot + ", dmg: " + dmg);
+                Debug.Log(hit.collider.gameObject);
+                //Debug.Log(hit.collider.gameObject.GetComponent<KillerBunny>);
+                //hit.collider.gameObject.GetComponent<KillerBunny>().Receive_dmg(dmg, false);
+                hit.collider.gameObject.GetComponent<BunnyReceiveDmg>().take_dmg(dmg);
             }
 
             if (hit.collider.tag == "metall")
             {
-
                 if (hit.collider.GetComponent<Rigidbody>())
                 {
                     hit.collider.GetComponent<Rigidbody>().AddExplosionForce(dmg / 10, hit.point, 10);

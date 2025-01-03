@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
 
-public class bunny_receive_dmg : MonoBehaviour
+public class BunnyReceiveDmg : MonoBehaviour
 {
-
-
-
     public bool is_head;
-    bool head_destroyed;
 
     public int head_break_force;
     public GameObject If_head_then_parts;
@@ -20,24 +16,14 @@ public class bunny_receive_dmg : MonoBehaviour
     public GameObject bunny_main;
     public bool dead;
 
-
     public void take_dmg(int dmg)
     {
-
-
-
-
-
-
-
         if (!is_head)
         {
-
             if (!dead)
             {
-                bunny_main.GetComponent<killer_bunny>().receive_dmg(dmg, false);
+                bunny_main.GetComponent<KillerBunny>().Receive_dmg(dmg, false);
             }
-
         }
         if (is_head)
         {
@@ -48,43 +34,25 @@ public class bunny_receive_dmg : MonoBehaviour
                 head_break();
             }
 
-
             if (!dead)
             {
-                bunny_main.GetComponent<killer_bunny>().receive_dmg(dmg * 2, true);
+                bunny_main.GetComponent<KillerBunny>().Receive_dmg(dmg * 2, true);
             }
-
         }
-
-
-
-
-
-
     }
 
     public void head_break()
     {
-
         main_bunny_skin.SetActive(false);
         killer_buny_without_head.SetActive(true);
         If_head_then_parts.SetActive(true);
 
         Destroy(GetComponent<BoxCollider>());
-        Destroy(GetComponent<bunny_receive_dmg>());
+        Destroy(GetComponent<BunnyReceiveDmg>());
     }
-
 
     public void Burn_me()
     {
-
-        if (bunny_main != null)
-        {
-            if (bunny_main.GetComponent<killer_bunny>())
-            {
-                bunny_main.GetComponent<killer_bunny>().start_burning();
-            }
-        }
 
     }
 }

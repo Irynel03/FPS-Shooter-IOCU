@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 
-public class assault57 : MonoBehaviour
+public class Assault57Weapon : MonoBehaviour
 {
 
     public GameObject player;

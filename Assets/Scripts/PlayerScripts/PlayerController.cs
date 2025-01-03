@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
             active_assault57.SetActive(true);
             //Icon_assault57.SetActive(true);
-            active_assault57.GetComponent<assault57>().Start();
+            active_assault57.GetComponent<Assault57Weapon>().Start();
 
             // restarting animator
             animator_obj.SetActive(false);
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
         if (active_assault57.activeSelf)
         {
-            ammo_gui.text = active_assault57.GetComponent<assault57>().magazine_current + " / " + active_assault57.GetComponent<assault57>().stored_bullets;
+            ammo_gui.text = active_assault57.GetComponent<Assault57Weapon>().magazine_current + " / " + active_assault57.GetComponent<Assault57Weapon>().stored_bullets;
         }
 
 
