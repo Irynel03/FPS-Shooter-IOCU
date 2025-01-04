@@ -1,11 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
-
 public class Assault57Weapon : MonoBehaviour
 {
-
     public GameObject player;
 
     //public GameObject recyle_particles_performance;
@@ -25,22 +22,15 @@ public class Assault57Weapon : MonoBehaviour
         in_shoot = false;
     }
 
-
-
-
-
     float Power_bolt;
 
     bool running;
     bool walking;
     bool reload;
 
-    //public bool _3rd_view;
-    //public Vector3 _3rd_view_cam;
 
     void Update()
     {
-
         Input_Status();
 
         // Input from the main player
@@ -100,7 +90,7 @@ public class Assault57Weapon : MonoBehaviour
 
             if (!button_aim)
             {
-               // idle walk
+                // idle walk
 
                 ani.SetInteger("assault57", 2);
 
@@ -162,20 +152,6 @@ public class Assault57Weapon : MonoBehaviour
             button_shoot = false;
         }
 
-        //if (cam_toggled)
-        //{
-        //    //_3rd_view = true;
-        //    //player.GetComponent<PlayerController>()._3rd = false;
-        //    //player.GetComponent<PlayerController>().head_3rd_status();
-        //}
-        //else
-        //{
-        //    _3rd_view = false;
-        //    player.GetComponent<PlayerController>()._3rd = true;
-        //    player.GetComponent<PlayerController>().head_3rd_status();
-        //}
-
-
         if (Input.GetButton("Fire2"))
         {
             button_aim = true;
@@ -194,27 +170,11 @@ public class Assault57Weapon : MonoBehaviour
         {
             key_reload = false;
         }
-
-        // moving the camera to the 3rd position
-
-        //if (_3rd_view)
-        //{
-        //    Cam.transform.localPosition = Vector3.Lerp(Cam.transform.localPosition, _3rd_view_cam, 15 * Time.deltaTime);
-
-        //}
     }
-
-
-
-
 
     public GameObject Shoot_start_point;
     public GameObject muzzle;
-
-
     float Push_bolt;
-
-
 
     bool in_shoot;
     Coroutine shooting;
@@ -227,13 +187,7 @@ public class Assault57Weapon : MonoBehaviour
     public AudioClip silence_shoot_sound;
     public AudioClip shoot_sound;
 
-
-
-
-
     public int Joule;
-
-
 
     public float vertical_force;
     public float horizontal_force;
@@ -243,12 +197,7 @@ public class Assault57Weapon : MonoBehaviour
 
     public IEnumerator shoot()
     {
-
         yield return new WaitForSeconds(0);
-
-
-
-
 
         // increasing the spread, while in automatic fire
         current_spread += spread_height;
@@ -258,17 +207,10 @@ public class Assault57Weapon : MonoBehaviour
         float hor = Random.Range(-current_spread, current_spread);
         float ver = Random.Range(-current_spread, current_spread);
 
-
-
         Add_spread = new Vector3(hor, ver, 0);
-
-
-
 
         // pushing the shoot animation completly back to 1
         Power_bolt = 1;
-
-
 
         //bullet_drop();
 
@@ -319,13 +261,7 @@ public class Assault57Weapon : MonoBehaviour
             Add_spread -= (Add_spread / 3);
         }
 
-
-
-
-
-        RaycastHit hit;
-
-
+        //RaycastHit hit;
 
         // shooting from the camera
         shoot_handle.GetComponent<ShootHandler>().register_shoot(Cam.transform.position, Cam.transform.TransformDirection(Vector3.forward - Add_spread), Joule);
@@ -336,10 +272,7 @@ public class Assault57Weapon : MonoBehaviour
             yield return new WaitForSeconds(firerate);
         }
 
-
-
         magazine_current -= 1;
-
 
         // checking for enough bullet in magazine
         if (magazine_current > 0 && full_auto && button_shoot)
@@ -469,9 +402,6 @@ public class Assault57Weapon : MonoBehaviour
     public Vector3 scope_c_cam;
     public GameObject scope_c_cam_obj;
 
-
-
-
     public bool lamp_a_bool;
     public bool lamp_laser_a_bool;
     public bool lamp_laser_b_bool;
@@ -515,20 +445,6 @@ public class Assault57Weapon : MonoBehaviour
     public GameObject suppressor_mac10;
     public GameObject suppressor_c;
     public GameObject suppressor_d;
-
-
-    //public void bullet_drop()
-    //{
-
-    //    bullet_shell.transform.localPosition = Bullet_shell_output_position;
-
-    //    GameObject b = Instantiate(bullet_shell, Bullet_shell_output.transform.position, Bullet_shell_output.transform.rotation);
-
-    //    b.GetComponent<Rigidbody>().AddForce(Bullet_shell_output.transform.right + Bullet_shell_output.transform.up, ForceMode.Impulse);
-
-
-    //}
-
 
 }
 

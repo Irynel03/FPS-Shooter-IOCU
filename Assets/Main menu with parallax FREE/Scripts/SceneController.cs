@@ -10,10 +10,11 @@ public class SceneController : MonoBehaviour {
     public int roomIndex;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         mainMenu = FindObjectOfType<MenuController>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (gameObject.transform.GetSiblingIndex() == 0 && !MenuController.instance.backgroundsController.GetComponent<Animation>().isPlaying)

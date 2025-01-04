@@ -73,18 +73,19 @@ public class KillerBunny : MonoBehaviour
                 in_hitting = true;
                 in_walk = false;
                 hit_ready = true;
+
+                DealDamageToPlayer();
             }
             else
             {
                 // move to the player
-                //agent.SetDestination(Target_list[0].transform.position);
+                agent.SetDestination(Target_list[0].transform.position);
 
                 agent.speed = walk_speed;
                 in_hitting = false;
                 in_walk = true;
                 hit_ready = false;
                 ani.SetInteger("legs", 1);
-
 
                 // choosing between 2 walk animation, to make the killybunny less static in walking
                 if (!in_corp_walk_determining)
@@ -95,6 +96,24 @@ public class KillerBunny : MonoBehaviour
             }
         }
     }
+
+    public float attackCooldown = 2f;
+    private float lastAttackTime = -Mathf.Infinity;
+
+    private void DealDamageToPlayer()
+    {
+        if (hit_ready && player != null && Time.time >= lastAttackTime + attackCooldown)
+        {
+            var playerHealth = player.GetComponent<PlayerController>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(20);
+                hit_ready = false;
+                lastAttackTime = Time.time;
+            }
+        }
+    }
+
 
     public IEnumerator Target_update()
     {
@@ -144,6 +163,7 @@ public class KillerBunny : MonoBehaviour
 
     bool in_corp_walk_determining;
     Coroutine corp_walk_animation_r;
+
     public IEnumerator Corp_walk_animation()
     {
         yield return new WaitForSeconds(0);

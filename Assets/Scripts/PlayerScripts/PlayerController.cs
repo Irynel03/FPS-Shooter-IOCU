@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -66,6 +68,36 @@ public class PlayerController : MonoBehaviour
             animator_obj.SetActive(false);
             animator_obj.SetActive(true);
         //}
+    }
+
+    public void TakeDamage(int damage)
+    {
+        player_health -= damage;
+        Debug.Log($"Player took {damage} damage. Remaining health: {player_health}");
+
+        if (player_health <= 0)
+        {
+            StartCoroutine(Die());
+        }
+    }
+
+    private IEnumerator Die()
+    {
+        Debug.Log("Player has died!");
+
+        // Freeze the game
+        Time.timeScale = 0f;
+
+        // Wait for 2 seconds in real-time (ignores Time.timeScale)
+        yield return new WaitForSecondsRealtime(2f);
+
+        // Unfreeze and load Main Menu
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene(0);
     }
 
 
