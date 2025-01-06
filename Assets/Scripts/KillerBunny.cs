@@ -43,6 +43,11 @@ public class KillerBunny : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
+
         if (already_died)
         {
             return;

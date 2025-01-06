@@ -110,6 +110,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(PauseMenu.isPaused)
+        {
+            return;
+        }
 
         walk_status();
         walk_execute();

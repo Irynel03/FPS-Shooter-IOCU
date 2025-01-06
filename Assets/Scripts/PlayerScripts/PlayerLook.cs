@@ -15,6 +15,11 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
+
         // Ensure the cursor remains locked during gameplay
         if (Cursor.lockState != CursorLockMode.Locked)
         {

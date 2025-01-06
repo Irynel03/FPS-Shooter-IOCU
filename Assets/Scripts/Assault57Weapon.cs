@@ -31,6 +31,11 @@ public class Assault57Weapon : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
+
         Input_Status();
 
         // Input from the main player

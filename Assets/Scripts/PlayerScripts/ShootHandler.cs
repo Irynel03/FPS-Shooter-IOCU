@@ -21,6 +21,11 @@ public class ShootHandler : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
+
         foreach (add_shoot s in added_shoots)
         {
             shoot(s.pos, s.rot, s.dmg);

@@ -18,7 +18,12 @@ public class PlayerInteract : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        if (PauseMenu.isPaused)
+        {
+            return;
+        }
+
         playerUI.UpdateText("");
         Ray ray= new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);

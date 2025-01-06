@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     {
         // Load the main menu scene
         SceneManager.LoadSceneAsync(0);
+        PauseMenu.isPaused = false;
     }
 
     public void ExitGame()
