@@ -8,6 +8,17 @@ TagManager:
   - CinemachineTarget
   - body
   - rescue_target
+  - eq
+  - wood
+  - fireball
+  - stone
+  - glass
+  - metall_door
+  - wood_door
+  - dirt
+  - metall
+  - wood_door_glass
+  - water
   layers:
   - Default
   - TransparentFX
