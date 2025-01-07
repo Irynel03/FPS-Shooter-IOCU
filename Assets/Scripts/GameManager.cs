@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject completeLevelUI;
+
     public void StartGame()
     {
         // Load the game scene
@@ -22,15 +24,9 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void CompleteLevel1()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //load the next level
+        SceneManager.LoadSceneAsync(3);
     }
 }

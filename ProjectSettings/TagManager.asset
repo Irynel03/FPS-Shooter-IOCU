@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - targets
+  - CinemachineTarget
+  - body
+  - rescue_target
   layers:
   - Default
   - TransparentFX

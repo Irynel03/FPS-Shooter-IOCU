@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,8 +40,6 @@ public class PlayerController : MonoBehaviour
     public bool jump;
     public bool run;
     public bool cam_toggled;
-
-
 
     private void Start()
     {
