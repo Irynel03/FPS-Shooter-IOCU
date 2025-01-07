@@ -142,6 +142,7 @@ public class PlayerController : MonoBehaviour
 
         if (active_assault57.activeSelf)
         {
+            //log the magazine count
             ammo_gui.text = active_assault57.GetComponent<Assault57Weapon>().magazine_current + " / " + active_assault57.GetComponent<Assault57Weapon>().stored_bullets;
         }
 

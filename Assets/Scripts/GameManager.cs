@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject completeLevelUI;
-
     public void StartGame()
     {
         // Load the game scene
@@ -24,9 +22,13 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void CompleteLevel1()
+    public void Level2()
     {
         //load the next level
         SceneManager.LoadSceneAsync(3);
+
+        PauseMenu.isPaused = false;
+
+        Time.timeScale = 1f;
     }
 }

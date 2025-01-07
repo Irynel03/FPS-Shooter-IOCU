@@ -4,7 +4,9 @@ public class PlayerCollisionHandler : MonoBehaviour
 {
     public GameManager gameManager;
 
-    public int targetsRescued = 0;
+    public GameObject completeLevelUI;
+
+    public int targetsRescued = 2;
 
     public void Update()
     {
@@ -21,7 +23,13 @@ public class PlayerCollisionHandler : MonoBehaviour
                     Destroy(hitCollider.gameObject);
                     if (targetsRescued >= 3)
                     {
-                        gameManager.CompleteLevel1();
+                        completeLevelUI.SetActive(true);
+
+                        PauseMenu.isPaused = true;
+                        Time.timeScale = 0f;
+
+                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
                     }
                 }
             }

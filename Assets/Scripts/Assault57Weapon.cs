@@ -327,6 +327,7 @@ public class Assault57Weapon : MonoBehaviour
         // 2 different types of reloading :  empty & unempty
         if (magazine_current > 0)
         {
+            Debug.Log(magazine_current);
             reload_time = 1.2581f;
             ani.SetInteger("assault57", 5); // unempty reload
 
@@ -338,6 +339,7 @@ public class Assault57Weapon : MonoBehaviour
         }
         else
         {
+            Debug.Log(magazine_current);
             reload_time = 1.79968f;
             ani.SetInteger("assault57", 3); // empty reload
 
