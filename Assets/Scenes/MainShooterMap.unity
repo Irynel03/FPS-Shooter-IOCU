@@ -55851,9 +55851,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2092169909}
     - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
+      propertyPath: vertical_speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
       propertyPath: active_assault57
       value: 
       objectReference: {fileID: 2092169909}
+    - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
+      propertyPath: horizontal_speed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6321040194963484237, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
       propertyPath: m_Name
       value: Player_New

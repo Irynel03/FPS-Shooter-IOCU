@@ -20,6 +20,7 @@ TagManager:
   - wood_door_glass
   - water
   - enemy
+  - Win_Condition
   layers:
   - Default
   - TransparentFX

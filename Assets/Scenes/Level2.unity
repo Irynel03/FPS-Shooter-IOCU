@@ -15550,6 +15550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 178604, guid: 67833d6ba7c887d48933b3682ee1df40, type: 3}
+      propertyPath: m_TagString
+      value: Win_Condition
+      objectReference: {fileID: 0}
     - target: {fileID: 438332, guid: 67833d6ba7c887d48933b3682ee1df40, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.5411203
@@ -21260,9 +21264,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2092169909}
     - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
+      propertyPath: vertical_speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
       propertyPath: active_assault57
       value: 
       objectReference: {fileID: 2092169909}
+    - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
+      propertyPath: horizontal_speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6321040194963484237, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
       propertyPath: m_Name
       value: Player_New
