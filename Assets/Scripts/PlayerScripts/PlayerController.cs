@@ -103,9 +103,11 @@ public class PlayerController : MonoBehaviour
     public float horizontal_float_spread;
 
     public int player_health;
+    public static int playerScore = 0;
 
     public TextMesh ammo_gui;
     public TextMesh health_gui;
+    public TextMesh score_gui;
 
     void FixedUpdate()
     {
@@ -137,6 +139,8 @@ public class PlayerController : MonoBehaviour
         // Player health status
         health_gui.text = "HP : " + player_health;
 
+        //Player score status
+        score_gui.text = "Score: " + playerScore;
 
         // Current magazine count
 

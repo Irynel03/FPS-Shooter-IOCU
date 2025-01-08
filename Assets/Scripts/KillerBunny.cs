@@ -152,6 +152,7 @@ public class KillerBunny : MonoBehaviour
 
         if (health < 0)
         {
+            PlayerController.playerScore += 10;
             Destroy(gameObject);
         }
     }
