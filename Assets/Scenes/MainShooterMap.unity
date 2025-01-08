@@ -55579,7 +55579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1190124131}
   completeLevelUI: {fileID: 1713296257}
-  targetsRescued: 2
+  targetsRescued: 0
 --- !u!1001 &2137417306
 PrefabInstance:
   m_ObjectHideFlags: 0
