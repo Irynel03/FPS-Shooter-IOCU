@@ -37,7 +37,7 @@ public class PlayerCollisionHandler : MonoBehaviour
                 if (hitCollider.gameObject.tag == "water")
                 {
                     Debug.Log("Player has fallen into the water");
-                    SceneManager.LoadSceneAsync(3);
+                    SceneManager.LoadSceneAsync(2);
                 }
             }
         }

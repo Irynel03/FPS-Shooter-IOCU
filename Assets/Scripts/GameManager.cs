@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public void StartGame()
     {
+        PauseMenu.isPaused = false;
         // Load the game scene
         SceneManager.LoadSceneAsync(1);
     }
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
     public void Level2()
     {
         //load the next level
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(2);
 
         PauseMenu.isPaused = false;
 

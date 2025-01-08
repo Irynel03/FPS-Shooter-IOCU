@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public float vertical_float_spread;
