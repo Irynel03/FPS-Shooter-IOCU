@@ -33,7 +33,8 @@ public class PlayerCollisionHandler : MonoBehaviour
                         Cursor.visible = true;
                     }
                 }
-                if(hitCollider.gameObject.tag == "water")
+
+                if (hitCollider.gameObject.tag == "water")
                 {
                     Debug.Log("Player has fallen into the water");
                     SceneManager.LoadSceneAsync(3);
