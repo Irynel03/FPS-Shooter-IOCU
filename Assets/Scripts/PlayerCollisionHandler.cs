@@ -39,6 +39,11 @@ public class PlayerCollisionHandler : MonoBehaviour
                     Debug.Log("Player has fallen into the water");
                     SceneManager.LoadSceneAsync(2);
                 }
+                if (hitCollider.gameObject.tag == "Win_Condition")
+                {
+                    Debug.Log("Player has won");
+                    SceneManager.LoadSceneAsync(4);
+                }
             }
         }
 
