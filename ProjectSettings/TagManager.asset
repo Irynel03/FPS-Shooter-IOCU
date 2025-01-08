@@ -19,6 +19,7 @@ TagManager:
   - metall
   - wood_door_glass
   - water
+  - enemy
   layers:
   - Default
   - TransparentFX

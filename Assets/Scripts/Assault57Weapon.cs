@@ -7,6 +7,9 @@ public class Assault57Weapon : MonoBehaviour
 
     //public GameObject recyle_particles_performance;
     public GameObject shoot_handle;
+
+    public GameObject grenade;
+
     public void Start()
     {
 
@@ -37,6 +40,11 @@ public class Assault57Weapon : MonoBehaviour
         }
 
         Input_Status();
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(grenade, player.transform.position + player.transform.forward * 2, player.transform.rotation);
+        }
 
         // Input from the main player
         running = player.GetComponent<PlayerController>().running;
