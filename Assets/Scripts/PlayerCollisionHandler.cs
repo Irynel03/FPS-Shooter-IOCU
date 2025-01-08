@@ -6,7 +6,7 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     public GameObject completeLevelUI;
 
-    public int targetsRescued = 2;
+    public int targetsRescued = 0;
 
     public void Update()
     {
