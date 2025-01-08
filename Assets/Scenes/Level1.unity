@@ -56526,6 +56526,10 @@ PrefabInstance:
       value: 100/100
       objectReference: {fileID: 0}
     - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
+      propertyPath: run_speed
+      value: 7.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090559624484507688, guid: c8106fd0ea9501b4dabf5ad1abd9174d, type: 3}
       propertyPath: score_gui
       value: 
       objectReference: {fileID: 1259550061}

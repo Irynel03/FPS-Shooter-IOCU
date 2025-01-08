@@ -1,12 +1,17 @@
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private string scoreKey = "score";
+
     public void StartGame()
     {
         PauseMenu.isPaused = false;
         // Load the game scene
+        PlayerPrefs.SetInt(scoreKey, 150);
+
         SceneManager.LoadSceneAsync(1);
     }
 

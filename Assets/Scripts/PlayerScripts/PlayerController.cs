@@ -54,20 +54,26 @@ public class PlayerController : MonoBehaviour
 
         target_add.GetComponent<TargetsForBunny>().Add_Target(gameObject);
 
-        //if (active_assault57.activeSelf)
-        //{
-            assault57_bool = false;
-            assault57_bool = true;
+        assault57_bool = false;
+        assault57_bool = true;
 
-            active_assault57.SetActive(true);
-            //Icon_assault57.SetActive(true);
-            active_assault57.GetComponent<Assault57Weapon>().Start();
+        active_assault57.SetActive(true);
+        //Icon_assault57.SetActive(true);
+        active_assault57.GetComponent<Assault57Weapon>().Start();
 
-            // restarting animator
-            animator_obj.SetActive(false);
-            animator_obj.SetActive(true);
-        //}
+        // restarting animator
+        animator_obj.SetActive(false);
+        animator_obj.SetActive(true);
+
+        InvokeRepeating("DecreaseScore", 1.0f, 1.0f);
     }
+
+    void DecreaseScore()
+    {
+        playerScore--; // Decrease score by 1
+    }
+
+
 
     public void TakeDamage(int damage)
     {
@@ -103,7 +109,7 @@ public class PlayerController : MonoBehaviour
     public float horizontal_float_spread;
 
     public int player_health;
-    public static int playerScore = 0;
+    public static int playerScore = 150;
 
     public TextMesh ammo_gui;
     public TextMesh health_gui;

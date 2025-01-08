@@ -6,7 +6,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     public GameManager gameManager;
 
     public GameObject completeLevelUI;
-
+    private string scoreKey = "score";
     public int targetsRescued = 0;
 
     public void Update()
@@ -31,6 +31,9 @@ public class PlayerCollisionHandler : MonoBehaviour
 
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
+
+                        var currentScore = PlayerPrefs.GetInt(scoreKey);
+                        PlayerPrefs.SetInt(scoreKey, PlayerController.playerScore + currentScore);
                     }
                 }
 
