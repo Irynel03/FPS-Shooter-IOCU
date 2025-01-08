@@ -84,7 +84,11 @@ public class KillerBunny : MonoBehaviour
             else
             {
                 // move to the player
+
+                Debug.Log("string"+Target_list[0]);
+                Debug.Log("string2"+Target_list[0].transform.position);
                 agent.SetDestination(Target_list[0].transform.position);
+               
 
                 agent.speed = walk_speed;
                 in_hitting = false;

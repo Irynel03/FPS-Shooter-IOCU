@@ -546,6 +546,36 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("water"))
+        {
+            Debug.Log("Player touched water!");
+
+            // Respawn sau moarte
+            RespawnPlayer();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Entered trigger with: {other.name}");
+        if (other.CompareTag("water"))
+        {
+            Debug.Log("Player touched water!");
+            RespawnPlayer(); // Sau StartCoroutine(Die());
+        }
+    }
+
+
+
+    private void RespawnPlayer()
+    {
+
+        Vector3 respawnPosition = new Vector3(0, 5, 0); // De exemplu, sus pe hartă
+        transform.position = respawnPosition;
+        Debug.Log("Player respawned!");
+    }
+
 
 
     bool destroy;

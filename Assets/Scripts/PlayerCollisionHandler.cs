@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class PlayerCollisionHandler : MonoBehaviour
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
                     }
+                }
+                if(hitCollider.gameObject.tag == "water")
+                {
+                    Debug.Log("Player has fallen into the water");
+                    SceneManager.LoadSceneAsync(3);
                 }
             }
         }

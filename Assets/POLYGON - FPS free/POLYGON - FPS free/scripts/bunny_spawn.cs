@@ -27,7 +27,7 @@ public class bunny_spawn : MonoBehaviour
 
 
             int Child_count = transform.childCount;
-
+            Debug.Log("position:"+transform.GetChild(UnityEngine.Random.Range(0, Child_count)).position);
 
             Instantiate(killer_bunny, transform.GetChild(UnityEngine.Random.Range(0, Child_count)).position, transform.rotation);
 
