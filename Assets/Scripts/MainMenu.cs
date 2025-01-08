@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
     private string scoreKey = "score";
     public void PlayGame()
     {
-        PlayerPrefs.SetInt(scoreKey, 0);
         SceneManager.LoadSceneAsync(1);
     }
 

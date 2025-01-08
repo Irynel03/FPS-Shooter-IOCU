@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class KillerBunny : MonoBehaviour
     public float walk_speed;
     public float hit_range;
     public Transform head;
+    public BunnyHealthBar healthBar;
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<BunnyHealthBar>();
+    }
 
     private void Start()
     {
@@ -149,6 +155,7 @@ public class KillerBunny : MonoBehaviour
     public void Receive_dmg(int dmg, bool headshot)
     {
         health -= dmg;
+        healthBar.UpdateHealthBar(health, 2500);
 
         if (health < 0)
         {

@@ -32,8 +32,9 @@ public class PlayerCollisionHandler : MonoBehaviour
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
 
-                        var currentScore = PlayerPrefs.GetInt(scoreKey);
-                        PlayerPrefs.SetInt(scoreKey, PlayerController.playerScore + currentScore);
+                        //var currentScore = PlayerPrefs.GetInt(scoreKey);
+                        PlayerPrefs.SetInt(scoreKey, PlayerController.playerScore);
+                        PlayerController.playerScore = 150;
                     }
                 }
 
@@ -45,6 +46,11 @@ public class PlayerCollisionHandler : MonoBehaviour
                 if (hitCollider.gameObject.tag == "Win_Condition")
                 {
                     Debug.Log("Player has won");
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    var level1Score = PlayerPrefs.GetInt(scoreKey);
+                    PlayerPrefs.SetInt(scoreKey, PlayerController.playerScore + level1Score);
                     SceneManager.LoadSceneAsync(4);
                 }
             }

@@ -8,6 +8,6 @@ public class UpdateTextOnLoad : MonoBehaviour
 
     void Start()
     {
-        textMesh.text = PlayerPrefs.GetInt(scoreKey).ToString(); // Append additionalText to the existing text
+        textMesh.text += PlayerPrefs.GetInt(scoreKey).ToString(); // Append additionalText to the existing text
     }
 }
